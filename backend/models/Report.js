@@ -1,0 +1,149 @@
+const mongoose = require('mongoose');
+
+const reportSchema = new mongoose.Schema({
+    website: { type: mongoose.Schema.Types.ObjectId, ref: 'Website', required: true },
+    user:    { type: mongoose.Schema.Types.ObjectId, ref: 'User',    required: true },
+    scanDate: { type: Date, default: Date.now },
+
+    // ── Scores ───────────────────────────────────────────────────────────────
+    seoScore:         { type: Number, default: 0 },
+    technicalScore:   { type: Number, default: 0 },
+    performanceScore: { type: Number, default: 0 },
+
+    // ── Issues / suggestions ─────────────────────────────────────────────────
+    issues: [{
+        category:       String,
+        issue:          String,
+        impact:         String,
+        recommendation: String
+    }],
+    suggestions: [String],
+    status: { type: String, default: 'completed' },
+
+    // ── Technical flags ──────────────────────────────────────────────────────
+    hasRobotsTxt:    { type: Boolean, default: false },
+    hasSitemap:      { type: Boolean, default: false },
+    hasFavicon:      { type: Boolean, default: false },
+    hasCustom404:    { type: Boolean, default: false },
+    isWwwOptimized:  { type: Boolean, default: false },
+    hasViewportMeta: { type: Boolean, default: false },
+    hasMediaQueries: { type: Boolean, default: false },
+    homepageReachable: { type: Boolean, default: true },
+
+    // ── Title ────────────────────────────────────────────────────────────────
+    titleText:   { type: String, default: '' },
+    titleLength: { type: Number, default: 0 },
+    titleStatus: { type: String, default: 'missing' }, // missing|short|ok|long
+
+    // ── Meta description ─────────────────────────────────────────────────────
+    metaDescText:   { type: String, default: '' },
+    metaDescLength: { type: Number, default: 0 },
+    metaDescStatus: { type: String, default: 'missing' }, // missing|short|ok|long
+
+    // ── Headings ─────────────────────────────────────────────────────────────
+    h1Count: { type: Number, default: 0 },
+    h1Texts: [String],
+    h2Count: { type: Number, default: 0 },
+    h2Texts: [String],
+
+    // ── Images ───────────────────────────────────────────────────────────────
+    totalImages:    { type: Number, default: 0 },
+    imageAltRatio:  { type: Number, default: 100 },
+    missingAltImages: [{ src: String, snippet: String }],
+
+    // ── Links ────────────────────────────────────────────────────────────────
+    internalLinks:    { type: Number, default: 0 },
+    externalLinks:    { type: Number, default: 0 },
+    linkRatioWarning: { type: Boolean, default: false },
+
+    // ── Keywords ─────────────────────────────────────────────────────────────
+    keywords: [{ word: String, count: Number }],
+    keywordsInTitle: { type: Boolean, default: false },
+    keywordsInDesc:  { type: Boolean, default: false },
+    
+    // ── Advanced SEO ────────────────────────────────────────────────────────
+    canonicalUrl: { type: String, default: '' },
+    hasNoindex:   { type: Boolean, default: false },
+    
+    ogTags: {
+        title:       String,
+        description: String,
+        image:       String,
+        url:         String
+    },
+    
+    hasSchemaData: { type: Boolean, default: false },
+    
+    contentFreshness: {
+        lastModified:         Date,
+        ogUpdatedTime:        Date,
+        articlePublishedTime: Date
+    },
+    
+    brokenLinks: [{
+        url:    String,
+        status: Number,
+        text:   String
+    }],
+    
+    mobileSnapshotUrl: { type: String, default: '' },
+    googleRanking: {
+        rank: { type: Number, default: 0 },
+        keyword: { type: String, default: '' }
+    },
+
+    // ── Advanced Performance & SEO Features ──────────────────────────────────
+    performanceDetails: {
+        serverResTime:       { type: Number, default: 0 },
+        contentLoadTime:     { type: Number, default: 0 },
+        scriptsCompleteTime: { type: Number, default: 0 },
+        htmlSize:            { type: Number, default: 0 },
+        cssSize:             { type: Number, default: 0 },
+        jsSize:              { type: Number, default: 0 },
+        imgSize:             { type: Number, default: 0 },
+        otherSize:           { type: Number, default: 0 },
+        compressionRate:     { type: Number, default: 0 }
+    },
+    
+    resourcesBreakdown: {
+        htmlNodes:  { type: Number, default: 0 },
+        jsFiles:    { type: Number, default: 0 },
+        cssFiles:   { type: Number, default: 0 },
+        imgFiles:   { type: Number, default: 0 },
+        otherFiles: { type: Number, default: 0 }
+    },
+    
+    hasAMP:          { type: Boolean, default: false },
+    jsErrors:        { type: Number, default: 0 },
+    hasHttp2:        { type: Boolean, default: false },
+    optimizedImages: { type: Boolean, default: false },
+    minifiedAssets:  { type: Boolean, default: false },
+    
+    deprecatedHtml: [{
+        line:       Number,
+        tag:        String,
+        occurrences: Number
+    }],
+    
+    inlineStyles: [{
+        line:  Number,
+        style: String
+    }],
+
+    // ── Social Results ───────────────────────────────────────────────────────
+    socialResults: {
+        score: { type: Number, default: 0 },
+        facebookLinked: { type: String, default: '' },
+        facebookOgTags: { type: Boolean, default: false },
+        facebookPixel:  { type: Boolean, default: false },
+        twitterLinked:  { type: String, default: '' },
+        twitterCards:   { type: Boolean, default: false },
+        instagramLinked: { type: String, default: '' },
+        linkedinLinked:  { type: String, default: '' },
+        youtubeLinked:   { type: String, default: '' },
+        youtubeActivity: { type: String, default: '' }
+    }
+
+}, { timestamps: true });
+
+module.exports = mongoose.model('SEOReport', reportSchema);
