@@ -88,7 +88,7 @@ export default function DetailsSelectionPage() {
                                 </td>
                                 <td className="py-4 px-6 text-right">
                                     <Link 
-                                        href={`/admin/details/${user._id}`}
+                                        href={`/admin/details/user?id=${user._id}`}
                                         className="text-red-500 hover:text-red-400 font-bold text-xs transition-colors"
                                     >
                                         View Full Details →

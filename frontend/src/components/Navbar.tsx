@@ -35,14 +35,10 @@ export default function Navbar() {
         // Listen for storage changes (for logout from other tabs or components)
         window.addEventListener('storage', checkAuth);
         
-        // Custom event for same-window updates if needed
-        const interval = setInterval(checkAuth, 2000);
-        
         return () => {
             window.removeEventListener('storage', checkAuth);
-            clearInterval(interval);
         };
-    }, [userName]);
+    }, []);
 
     const handleLogout = () => {
         localStorage.removeItem('token');

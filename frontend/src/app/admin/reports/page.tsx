@@ -115,7 +115,7 @@ export default function AllReportsPage() {
                                     <td className="py-5 px-4 font-medium text-white">{report.user?.name || "Anonymous User"} <span className="text-xs font-normal text-slate-500 block">{report.user?.email}</span></td>
                                     <td className="py-5 px-4">
                                         <Link 
-                                            href={`/admin/reports/${report._id}`}
+                                            href={`/admin/reports/view?id=${report._id}`}
                                             className="text-blue-400 font-mono text-xs opacity-80 decoration-slate-600 underline-offset-4 hover:underline hover:opacity-100 transition-all"
                                         >
                                             {report.website?.url || "N/A"}
