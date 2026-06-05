@@ -4,6 +4,13 @@ const cors = require('cors');
 const path = require('path');
 const connectDB = require('./config/db');
 
+// Catch unhandled promise rejections and uncaught exceptions to prevent server crashes
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('[Process] Unhandled Rejection at:', promise, 'reason:', reason);
+});
+process.on('uncaughtException', (err) => {
+    console.error('[Process] Uncaught Exception:', err.message);
+});
 connectDB();
 
 const app = express();

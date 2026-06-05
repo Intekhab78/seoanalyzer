@@ -25,12 +25,14 @@ export default function LoginPage() {
             const data = await res.json();
 
             if (!res.ok) {
-                throw new Error(data.message || 'Invalid credentials');
+                setError(data.message || 'Invalid credentials');
+                setLoading(false);
+                return;
             }
 
             // Save token and redirect
             localStorage.setItem('token', data.token);
-            
+
             // Check for pre-selected plan from /plans page
             const selectedPlan = localStorage.getItem('selected_plan');
             if (selectedPlan) {
@@ -57,8 +59,8 @@ export default function LoginPage() {
                 router.push('/plans');
             }
         } catch (err: any) {
-            console.error("Login error:", err);
-            setError(err.message);
+            console.log("Login error:", err.message);
+            setError(err.message || "An unexpected error occurred");
         } finally {
             setLoading(false);
         }

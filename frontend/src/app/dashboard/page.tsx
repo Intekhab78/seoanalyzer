@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -88,7 +88,7 @@ export default function Dashboard() {
                                 reports.map((report: any) => (
                                     <tr
                                         key={report._id}
-                                        onClick={() => router.push(`/dashboard/reports/${report._id}`)}
+                                        onClick={() => router.push(`/dashboard/reports/detail?id=${report._id}`)}
                                         className="border-b border-slate-800/50 hover:bg-white/[0.03] transition-colors cursor-pointer group"
                                     >
                                         <td className="py-5 px-4 text-white font-medium group-hover:text-blue-400 transition-colors">

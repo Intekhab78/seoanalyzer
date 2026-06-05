@@ -1,9 +1,8 @@
-﻿"use client";
+"use client";
 import { Chart as ChartJS, RadialLinearScale, ArcElement, Tooltip, Legend } from 'chart.js';
-import { PolarArea, Doughnut } from 'react-chartjs-2';
-import { use, useEffect, useState } from 'react';
+import { PolarArea } from 'react-chartjs-2';
+import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../../config';
-import Link from 'next/link';
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 

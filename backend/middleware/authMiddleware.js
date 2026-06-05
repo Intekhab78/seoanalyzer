@@ -26,7 +26,7 @@ const protect = async (req, res, next) => {
             console.log(`[Auth] User authenticated successfully: ${req.user.email} (${req.user._id})`);
             return next();
         } catch (error) {
-            console.error('[Auth] Token verification failed:', error);
+            console.log('[Auth] Token verification failed:', error.message);
             return res.status(401).json({ message: 'Not authorized, token failed' });
         }
     }
@@ -64,7 +64,7 @@ const flexibleProtect = async (req, res, next) => {
 
             return res.status(401).json({ message: 'Not authorized, invalid token claims' });
         } catch (error) {
-            console.error('[FlexibleAuth] Error:', error);
+            console.log('[FlexibleAuth] Error:', error.message);
             return res.status(401).json({ message: 'Not authorized, token failed' });
         }
     }

@@ -97,6 +97,7 @@ const getUserPlan = async (req, res) => {
         let websiteUsed = Math.max(0, websiteCount - initialCount);
         
         let scansLeft;
+        let totalLimit;
         const pType = planType.toLowerCase();
         
         if (limitOverride !== null && limitOverride !== undefined) {

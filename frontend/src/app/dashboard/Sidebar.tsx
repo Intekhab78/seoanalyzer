@@ -22,6 +22,9 @@ export default function Sidebar() {
                 if (res.ok) {
                     const data = await res.json();
                     setAccount(data);
+                } else if (res.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login';
                 }
             } catch (error) {
                 console.error("Failed to fetch account info:", error);

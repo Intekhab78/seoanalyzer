@@ -1,5 +1,5 @@
-﻿"use client";
-import { useEffect, useState, use } from 'react';
+"use client";
+import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../../config';
 import Link from 'next/link';
 

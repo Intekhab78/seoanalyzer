@@ -1,0 +1,116 @@
+
+E:\seoanalyzer\frontend\src\app\admin\dashboard\page.tsx
+   41:27  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  124:46  warning  'color' is defined but never used         @typescript-eslint/no-unused-vars
+  124:55  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\admin\details\user\AdminDetailsClient.tsx
+   2:31  warning  'use' is defined but never used           @typescript-eslint/no-unused-vars
+   7:38  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\admin\layout.tsx
+  16:13  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+E:\seoanalyzer\frontend\src\app\admin\layout.tsx:16:13
+  14 |             router.push('/admin/login');
+  15 |         } else if (token) {
+> 16 |             setIsAuthenticated(true);
+     |             ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  17 |         } else {
+  18 |             setIsAuthenticated(false);
+  19 |         }  react-hooks/set-state-in-effect
+
+E:\seoanalyzer\frontend\src\app\admin\login\page.tsx
+  32:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\admin\reports\page.tsx
+   60:23   error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  148:76   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  148:108  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  148:126  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+E:\seoanalyzer\frontend\src\app\admin\reports\view\AdminReportClient.tsx
+   2:31  warning  'use' is defined but never used           @typescript-eslint/no-unused-vars
+   7:42  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  21:27  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\admin\requests\page.tsx
+  48:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\admin\users\page.tsx
+  39:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\Sidebar.tsx
+  10:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\account\page.tsx
+   7:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  31:27  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\help\page.tsx
+  24:147  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  24:155  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  31:278  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  59:81   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+E:\seoanalyzer\frontend\src\app\dashboard\page.tsx
+    8:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   88:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  150:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\reports\detail\ReportClient.tsx
+    3:21   warning  'Doughnut' is defined but never used      @typescript-eslint/no-unused-vars
+    4:10   warning  'use' is defined but never used           @typescript-eslint/no-unused-vars
+    6:8    warning  'Link' is defined but never used          @typescript-eslint/no-unused-vars
+   96:43   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   99:282  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  105:42   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  128:27   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  172:51   error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\reports\page.tsx
+   7:44  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  69:54  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\dashboard\scan\page.tsx
+  33:34  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  70:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\login\page.tsx
+   59:23  error  Unexpected any. Specify a different type                         @typescript-eslint/no-explicit-any
+  119:24  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+E:\seoanalyzer\frontend\src\app\page.tsx
+   18:30   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  134:68   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  134:190  error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+
+E:\seoanalyzer\frontend\src\app\plans\page.tsx
+    2:20  warning  'useEffect' is defined but never used     @typescript-eslint/no-unused-vars
+  116:23  error    Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\app\register\page.tsx
+  60:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+E:\seoanalyzer\frontend\src\components\Navbar.tsx
+  41:8   warning  React Hook useEffect has a missing dependency: 'userName'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  43:11  warning  'handleLogout' is assigned a value but never used                                                            @typescript-eslint/no-unused-vars
+
+E:\seoanalyzer\frontend\src\components\Pagination.tsx
+  17:13  error  'endPage' is never reassigned. Use 'const' instead  prefer-const
+
+E:\seoanalyzer\frontend\src\config.ts
+  2:7   warning  'LOCAL_PORT' is assigned a value but never used          @typescript-eslint/no-unused-vars
+  4:12  error    'API_BASE_URL' is never reassigned. Use 'const' instead  prefer-const
+
+✖ 53 problems (43 errors, 10 warnings)
+  2 errors and 0 warnings potentially fixable with the `--fix` option.
+

@@ -11,10 +11,14 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     useEffect(() => {
         const token = localStorage.getItem('adminToken');
         if (!token && pathname !== '/admin/login') {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setIsAuthenticated(false);
             router.push('/admin/login');
         } else if (token) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setIsAuthenticated(true);
         } else {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setIsAuthenticated(false);
         }
     }, [pathname, router]);

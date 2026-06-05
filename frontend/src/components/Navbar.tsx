@@ -1,13 +1,11 @@
 "use client";
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { API_BASE_URL } from '../config';
 
 export default function Navbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [userName, setUserName] = useState<string | null>(null);
-    const router = useRouter();
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -22,6 +20,12 @@ export default function Navbar() {
                     if (res.ok) {
                         const data = await res.json();
                         setUserName(data.user?.name || 'Account');
+                    } else if (res.status === 401) {
+                        console.warn("[Auth] Token invalid, logging out automatically.");
+                        localStorage.removeItem('token');
+                        setIsLoggedIn(false);
+                        setUserName(null);
+                        window.location.href = '/login';
                     }
                 } catch (error) {
                     console.error("Failed to fetch user name:", error);
@@ -38,14 +42,7 @@ export default function Navbar() {
         return () => {
             window.removeEventListener('storage', checkAuth);
         };
-    }, []);
-
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setIsLoggedIn(false);
-        setUserName(null);
-        router.push('/login');
-    };
+    }, [userName]);
 
     return (
         <nav className="fixed top-0 w-full z-50 glass-panel border-b-0 border-x-0 rounded-none bg-slate-900/50 print:hidden">

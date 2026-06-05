@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { API_BASE_URL } from '../../../config';
@@ -25,6 +25,9 @@ export default function AccountPage() {
                 if (res.ok) {
                     const data = await res.json();
                     setAccount(data);
+                } else if (res.status === 401) {
+                    localStorage.removeItem('token');
+                    window.location.href = '/login';
                 } else {
                     setError('Failed to load account details.');
                 }
