@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { Chart as ChartJS, RadialLinearScale, ArcElement, Tooltip, Legend } from 'chart.js';
 import { PolarArea, Doughnut } from 'react-chartjs-2';
 import { use, useEffect, useState } from 'react';
@@ -7,15 +7,15 @@ import Link from 'next/link';
 
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
-// ─── Status helpers ───────────────────────────────────────────────────────────
+// â”€â”€â”€ Status helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 type StatusType = 'pass' | 'warn' | 'fail' | 'info';
 
 function StatusBadge({ status }: { status: StatusType }) {
     const cfg = {
-        pass: { icon: '✅', label: 'Pass',    cls: 'bg-green-500/10  text-green-400  border-green-500/20'  },
-        warn: { icon: '⚠️', label: 'Warning', cls: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' },
-        fail: { icon: '❌', label: 'Error',   cls: 'bg-red-500/10    text-red-400    border-red-500/20'    },
-        info: { icon: 'ℹ️', label: 'Info',    cls: 'bg-blue-500/10   text-blue-400   border-blue-500/20'   },
+        pass: { icon: 'âœ…', label: 'Pass',    cls: 'bg-green-500/10  text-green-400  border-green-500/20'  },
+        warn: { icon: 'âš ï¸', label: 'Warning', cls: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/20' },
+        fail: { icon: 'âŒ', label: 'Error',   cls: 'bg-red-500/10    text-red-400    border-red-500/20'    },
+        info: { icon: 'â„¹ï¸', label: 'Info',    cls: 'bg-blue-500/10   text-blue-400   border-blue-500/20'   },
     }[status];
     return (
         <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold border ${cfg.cls} whitespace-nowrap`}>
@@ -50,7 +50,7 @@ function AuditRow({
                         onClick={() => setOpen(o => !o)}
                         className="shrink-0 text-xs text-blue-400 hover:text-blue-300 border border-blue-500/30 rounded px-2 py-1 transition-colors whitespace-nowrap"
                     >
-                        How to fix {open ? '▲' : '▼'}
+                        How to fix {open ? 'â–²' : 'â–¼'}
                     </button>
                 )}
             </div>
@@ -134,7 +134,7 @@ export default function ReportClient({ id }: { id: string }) {
         if (id) fetchReport();
     }, [id]);
 
-    if (loading) return <div className="p-8 text-center text-slate-400 animate-pulse">Loading your audit report…</div>;
+    if (loading) return <div className="p-8 text-center text-slate-400 animate-pulse">Loading your audit reportâ€¦</div>;
     if (error || !report) return <div className="p-8 text-center text-red-400">Error: {error || 'Report not found'}</div>;
 
     const isExpert = userPlanType === 'Expert Report';

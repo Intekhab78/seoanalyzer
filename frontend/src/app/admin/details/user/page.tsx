@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useSearchParams } from 'next/navigation';
 import AdminDetailsClient from './AdminDetailsClient';
 import { Suspense } from 'react';

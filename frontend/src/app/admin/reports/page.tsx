@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../config';
 import Pagination from '../../../components/Pagination';
@@ -143,7 +143,7 @@ export default function AllReportsPage() {
 
                     {reports.length === 0 && !loading && (
                         <div className="py-20 text-center">
-                            <div className="text-4xl mb-4">🔍</div>
+                            <div className="text-4xl mb-4">ðŸ”</div>
                             <h3 className="text-white font-bold mb-2">No Reports Found</h3>
                             <p className="text-slate-500 text-sm">We couldn't find any activities matching "{debouncedSearch}"</p>
                             <button 

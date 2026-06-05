@@ -25,10 +25,10 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 w-full justify-center max-w-md">
-          <Link href="/plans" className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
+          <Link prefetch={false} href="/plans" className="w-full sm:w-auto text-center bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] transform hover:-translate-y-1">
             Start Free Audit
           </Link>
-          <Link href="#features" className="w-full sm:w-auto text-center glass-panel px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-300">
+          <Link prefetch={false} href="#features" className="w-full sm:w-auto text-center glass-panel px-8 py-4 rounded-full font-medium hover:bg-white/10 transition-all duration-300">
             Explore Features
           </Link>
         </div>
@@ -45,37 +45,37 @@ export default function Home() {
           <FeatureCard
             title="Technical Analysis"
             desc="Deep crawl checking sitemaps, robots.txt, canonicals, and broken links with precision."
-            icon="⚙️"
+            icon="âš™ï¸"
             gradient="from-blue-500/20 to-cyan-500/20"
           />
           <FeatureCard
             title="Performance Scoring"
             desc="Lighthouse-powered speed checks highlighting LCP, CLS, and actionable optimizations."
-            icon="⚡"
+            icon="âš¡"
             gradient="from-amber-500/20 to-orange-500/20"
           />
           <FeatureCard
             title="On-Page Checking"
             desc="Validates meta tags, H1-H6 structure, keyword density, and internal link routing."
-            icon="📝"
+            icon="ðŸ“"
             gradient="from-emerald-500/20 to-teal-500/20"
           />
           <FeatureCard
             title="Social Presence Audit"
             desc="Verification of Open Graph tags, Facebook Pixel integration, and social profile connectivity."
-            icon="🌐"
+            icon="ðŸŒ"
             gradient="from-indigo-500/20 to-blue-500/20"
           />
           <FeatureCard
             title="Keyword Rank Tracking"
             desc="Identify your top-performing keywords and monitor your exact position on Google Search results."
-            icon="🎯"
+            icon="ðŸŽ¯"
             gradient="from-fuchsia-500/20 to-pink-500/20"
           />
           <FeatureCard
             title="AI-Powered Insights"
             desc="Intelligent recommendations tailored to your niche, helping you prioritize high-impact SEO fixes."
-            icon="🧠"
+            icon="ðŸ§ "
             gradient="from-violet-500/20 to-purple-500/20"
           />
         </div>
@@ -164,7 +164,7 @@ export default function Home() {
           <div className="relative z-10">
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-8" style={{ fontFamily: 'var(--font-outfit)' }}>Ready to Conquer <br/> Search Results?</h2>
             <p className="text-slate-300 text-lg mb-12 max-w-2xl mx-auto">Join thousands of website owners who use our premium audit engine to drive more organic traffic with zero guesswork.</p>
-            <Link href="/plans" className="inline-block bg-white text-slate-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-100 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transform hover:-translate-y-1">
+            <Link prefetch={false} href="/plans" className="inline-block bg-white text-slate-900 px-10 py-4 rounded-full font-bold text-lg hover:bg-slate-100 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(255,255,255,0.4)] transform hover:-translate-y-1">
               Analyze My Website Now
             </Link>
           </div>

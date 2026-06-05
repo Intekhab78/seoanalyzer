@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, use } from 'react';
 import { API_BASE_URL } from '../../../../config';
 import Link from 'next/link';
@@ -34,7 +34,7 @@ export default function AdminDetailsClient({ id }: { id: string }) {
     return (
         <div className="space-y-10 animate-fade-in pb-20">
              <header>
-                <Link href="/admin/details" className="text-red-500 text-xs font-bold hover:underline mb-2 block">← Back to Directory</Link>
+                <Link prefetch={false} href="/admin/details" className="text-red-500 text-xs font-bold hover:underline mb-2 block">â† Back to Directory</Link>
                 <h1 className="text-4xl font-bold text-white mb-2">{data.user.name}</h1>
                 <p className="text-slate-400 font-mono text-sm">{data.user.email}</p>
             </header>

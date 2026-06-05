@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../config';
 import Link from 'next/link';
@@ -91,7 +91,7 @@ export default function DetailsSelectionPage() {
                                         href={`/admin/details/user?id=${user._id}`}
                                         className="text-red-500 hover:text-red-400 font-bold text-xs transition-colors"
                                     >
-                                        View Full Details →
+                                        View Full Details â†’
                                     </Link>
                                 </td>
                             </tr>

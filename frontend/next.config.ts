@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  // Ensure we don't try to fetch data files that Hostinger might block
+  skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;

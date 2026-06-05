@@ -47,19 +47,19 @@ export default function Sidebar() {
     return (
         <aside className="w-64 border-r border-slate-800/50 glass-panel rounded-none border-y-0 border-l-0 hidden md:flex flex-col mt-0 pt-0 print:hidden">
             <div className="px-4 py-8 flex flex-col gap-2 flex-grow">
-                <Link href="/dashboard" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
+                <Link prefetch={false} href="/dashboard" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
                     Overview
                 </Link>
-                <Link href="/dashboard/reports" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/reports') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
+                <Link prefetch={false} href="/dashboard/reports" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/reports') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
                     My Reports
                 </Link>
-                {/* <Link href="/dashboard/settings" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/settings') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
+                {/* <Link prefetch={false} href="/dashboard/settings" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/settings') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
                     Settings
                 </Link> */}
-                <Link href="/dashboard/account" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/account') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
+                <Link prefetch={false} href="/dashboard/account" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/account') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
                     My Account
                 </Link>
-                <Link href="/dashboard/help" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/help') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
+                <Link prefetch={false} href="/dashboard/help" className={`px-4 py-3 rounded-lg font-medium transition-all ${isActive('/dashboard/help') ? 'bg-blue-500/10 text-blue-400 border border-blue-500/20' : 'text-slate-400 hover:bg-white/5 hover:text-white border border-transparent'}`}>
                     Help & Manual
                 </Link>
 

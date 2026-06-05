@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState, use } from 'react';
 import { API_BASE_URL } from '../../../../config';
 import Link from 'next/link';
@@ -27,14 +27,14 @@ export default function AdminReportClient({ id }: { id: string }) {
         fetchReport();
     }, [id]);
 
-    if (loading) return <div className="p-8 text-center text-slate-400 animate-pulse">Loading detailed diagnostic audit…</div>;
+    if (loading) return <div className="p-8 text-center text-slate-400 animate-pulse">Loading detailed diagnostic auditâ€¦</div>;
     if (error || !report) return <div className="p-8 text-center text-red-400">Error: {error || 'Report not found'}</div>;
 
     return (
         <div className="w-full max-w-6xl mx-auto animate-fade-in relative z-10">
             <header className="mb-8">
-                <Link href="/admin/reports" className="text-slate-500 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium mb-4">
-                    ← Back to Logs
+                <Link prefetch={false} href="/admin/reports" className="text-slate-500 hover:text-white transition-colors flex items-center gap-2 text-sm font-medium mb-4">
+                    â† Back to Logs
                 </Link>
                 <h1 className="text-3xl font-bold text-white">Diagnostic Report for {id}</h1>
                 <p className="text-blue-400 underline">{report.website?.url}</p>

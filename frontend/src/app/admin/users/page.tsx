@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../config';
 
@@ -194,7 +194,7 @@ export default function AllUsersPage() {
                                                     {user.websiteCount || 0} / {user.scanLimitOverride !== null && user.scanLimitOverride !== undefined ? (
                                                         <span className="text-blue-400 font-bold">{user.scanLimitOverride}</span>
                                                     ) : (
-                                                        user.plan === 'Basic Report' ? 1 : user.plan === 'Advanced Report' ? 5 : '∞'
+                                                        user.plan === 'Basic Report' ? 1 : user.plan === 'Advanced Report' ? 5 : 'âˆž'
                                                     )}
                                                 </span>
                                                 <button onClick={() => handleEditClick(user)} className="text-blue-400 text-[10px] hover:underline opacity-0 group-hover:opacity-100 transition-opacity">Edit</button>

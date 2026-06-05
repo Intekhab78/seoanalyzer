@@ -52,19 +52,20 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center">
                     <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-outfit)' }}>
+                        <Link prefetch={false} href="/" className="text-2xl font-bold tracking-tight" style={{ fontFamily: 'var(--font-outfit)' }}>
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-violet-500">JTS SEO</span>
                             <span className="text-white">Analyzer</span>
                         </Link>
                     </div>
                     <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/#features" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Features</Link>
-                        <Link href="/plans" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Plans</Link>
+                        <Link prefetch={false} href="/#features" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Features</Link>
+                        <Link prefetch={false} href="/plans" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Plans</Link>
                         
                         {isLoggedIn ? (
                             <>
                                 <Link 
                                     href="/dashboard/account"
+                                    prefetch={false}
                                     className="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-200 flex items-center gap-2"
                                 >
                                     <div className="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-[10px] text-blue-400">
@@ -72,14 +73,14 @@ export default function Navbar() {
                                     </div>
                                     {userName || 'Account'}
                                 </Link>
-                                <Link href="/dashboard" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
+                                <Link prefetch={false} href="/dashboard" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
                                     Dashboard
                                 </Link>
                             </>
                         ) : (
                             <>
-                                <Link href="/login" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Login</Link>
-                                <Link href="/plans" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
+                                <Link prefetch={false} href="/login" className="text-sm font-medium text-slate-300 hover:text-white transition-colors duration-200">Login</Link>
+                                <Link prefetch={false} href="/plans" className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(37,99,235,0.4)] hover:shadow-[0_0_25px_rgba(37,99,235,0.6)]">
                                     Get Started
                                 </Link>
                             </>

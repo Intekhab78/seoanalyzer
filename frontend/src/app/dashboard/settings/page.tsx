@@ -1,4 +1,4 @@
-export default function SettingsPage() {
+﻿export default function SettingsPage() {
     return (
         <div className="w-full max-w-3xl mx-auto animate-fade-in relative z-10 pt-10">
             <div className="glass-panel p-8 md:p-12 relative overflow-hidden">

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { API_BASE_URL } from '../../../config';
@@ -79,7 +79,7 @@ export default function ScanPage() {
             {needsUpgrade ? (
                 <div className="glass-panel p-8 md:p-12 text-center relative overflow-hidden">
                     <div className="absolute top-[-50px] right-[-50px] w-40 h-40 bg-purple-500/10 rounded-full blur-[50px] pointer-events-none"></div>
-                    <div className="text-5xl mb-6">🚀</div>
+                    <div className="text-5xl mb-6">ðŸš€</div>
                     <h2 className="text-3xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-outfit)' }}>Plan Limit Reached</h2>
                     <p className="text-slate-400 mb-8 max-w-md mx-auto text-lg hover:text-white transition-colors">
                         {limitMessage || "Your Basic Report plan allows scanning 1 website. Upgrade your plan to Advanced Report or Expert Report to analyze more websites."}

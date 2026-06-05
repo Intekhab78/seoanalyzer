@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useSearchParams } from 'next/navigation';
 import ReportClient from './ReportClient';
 import { Suspense } from 'react';

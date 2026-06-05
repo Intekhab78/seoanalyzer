@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useState } from 'react';
 import { API_BASE_URL } from '../../../config';
 import Link from 'next/link';
@@ -61,9 +61,9 @@ export default function AdminDashboard() {
 
             {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <AdminStatCard title="Global Users" value={stats?.totalUsers || 0} icon="👥" color="blue" />
-                <AdminStatCard title="Analyzed Sites" value={stats?.totalWebsites || 0} icon="🌐" color="emerald" />
-                <AdminStatCard title="Total Audits" value={stats?.totalReports || 0} icon="📊" color="amber" />
+                <AdminStatCard title="Global Users" value={stats?.totalUsers || 0} icon="ðŸ‘¥" color="blue" />
+                <AdminStatCard title="Analyzed Sites" value={stats?.totalWebsites || 0} icon="ðŸŒ" color="emerald" />
+                <AdminStatCard title="Total Audits" value={stats?.totalReports || 0} icon="ðŸ“Š" color="amber" />
             </div>
 
             {/* Interaction Feed */}

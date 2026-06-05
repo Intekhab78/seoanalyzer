@@ -128,7 +128,7 @@ export default function RegisterPage() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="w-full bg-slate-900/50 border border-slate-700/50 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-transparent transition-all shadow-inner"
-                            placeholder="••••••••"
+                            placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                             required
                         />
                     </div>
@@ -140,7 +140,7 @@ export default function RegisterPage() {
 
                 <div className="mt-8 text-center text-sm text-slate-400 relative z-10">
                     Already have an account?{' '}
-                    <Link href="/login" className="font-semibold text-violet-400 hover:text-violet-300 transition-colors">
+                    <Link prefetch={false} href="/login" className="font-semibold text-violet-400 hover:text-violet-300 transition-colors">
                         Sign in
                     </Link>
                 </div>
